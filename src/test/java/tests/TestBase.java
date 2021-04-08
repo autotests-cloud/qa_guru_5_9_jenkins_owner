@@ -13,6 +13,11 @@ import static helpers.AttachmentHelper.*;
 public class TestBase {
     @BeforeAll
     static void setup() {
+//        System.out.println("a");
+//        System.out.println(System.getProperties());
+//        gradle clean test -Da=b
+        System.out.println(System.getProperty("a"));
+
         addListener("AllureSelenide", new AllureSelenide());
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
