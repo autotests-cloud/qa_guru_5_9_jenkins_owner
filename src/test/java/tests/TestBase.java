@@ -4,7 +4,7 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import config.ProjectConfig;
-import helpers.AttachmentHelper;
+import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -40,12 +40,12 @@ public class TestBase {
 
     @AfterEach
     void afterEach() {
-        AttachmentHelper.attachScreenshot("Last screenshot");
-        AttachmentHelper.attachPageSource();
-        AttachmentHelper.attachBrowserConsoleLogs();
+        Attach.screenshotAs("Last screenshot");
+        Attach.pageSource();
+        Attach.attachBrowserConsoleLogs();
 
         if(ProjectConfig.driver.videoStorage() != null) {
-            AttachmentHelper.attachVideo();
+            Attach.attachVideo();
         }
         
         Selenide.closeWebDriver();

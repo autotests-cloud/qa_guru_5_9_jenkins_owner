@@ -3,27 +3,22 @@ package helpers;
 import com.codeborne.selenide.Selenide;
 import config.ProjectConfig;
 import io.qameta.allure.Attachment;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 
-import java.nio.charset.StandardCharsets;
-
-import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static org.openqa.selenium.logging.LogType.BROWSER;
 
-public class AttachmentHelper {
+public class Attach {
     @Attachment(value = "{attachName}", type = "text/plain")
-    public static String attachAsText(String attachName, String message) {
-        return message;
+    public static String message(String attachName, String text) {
+        return text;
     }
 
     @Attachment(value = "Page source", type = "text/plain")
-    public static byte[] attachPageSource() {
+    public static byte[] pageSource() {
         return DriverUtils.getPageSourceAsBytes();
     }
 
     @Attachment(value = "{attachName}", type = "image/png")
-    public static byte[] attachScreenshot(String attachName) {
+    public static byte[] screenshotAs(String attachName) {
         return DriverUtils.getScreenshotAsBytes();
     }
 
@@ -37,6 +32,6 @@ public class AttachmentHelper {
     }
 
     public static void attachBrowserConsoleLogs() {
-        AttachmentHelper.attachAsText("Browser console logs", String.join("\n", Selenide.getWebDriverLogs(BROWSER)));
+        Attach.message("Browser console logs", String.join("\n", Selenide.getWebDriverLogs(BROWSER)));
     }
 }
