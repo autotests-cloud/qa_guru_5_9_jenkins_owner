@@ -9,18 +9,18 @@ import org.aeonbits.owner.Config;
 })
 public interface DriverConfig extends Config {
     @DefaultValue("chrome")
-    @Key("web.browser")
-    String webBrowser();
+    @Key("driver.browser")
+    String browser();
 
-    @Key("remote.web.driver")
-    String remoteWebDriver();
+    @Key("driver.remoteUrl")
+    String remoteUrl();
 
-    @Key("remote.web.user")
-    String remoteWebUser();
+    @Key("driver.remoteUser")
+    String remoteUser();
 
-    @Key("remote.web.password")
-    String remoteWebPassword();
+    @Key("driver.remotePassword")
+    String remotePassword();
 
-    @Key("video.storage")
+    @Key("driver.videoStorage")
     String videoStorage();
 }

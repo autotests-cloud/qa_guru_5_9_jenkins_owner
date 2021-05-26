@@ -1,11 +1,11 @@
 package helpers;
 
 import com.codeborne.selenide.Selenide;
+import config.ProjectConfig;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import tests.TestBase;
 
 import java.nio.charset.StandardCharsets;
 
@@ -31,7 +31,7 @@ public class AttachmentHelper {
     @Attachment(value = "Video", type = "text/html", fileExtension = ".html")
     public static String attachVideo() {
         return "<html><body><video width='100%' height='100%' controls autoplay><source src='"
-                + TestBase.driverConfig.videoStorage() + getSessionId() + ".mp4"
+                + ProjectConfig.driver.videoStorage() + getSessionId() + ".mp4"
                 + "' type='video/mp4'></video></body></html>";
     }
 
