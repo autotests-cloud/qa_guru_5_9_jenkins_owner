@@ -3,7 +3,7 @@ package tests;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
-import config.ProjectConfig;
+import config.Project;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
@@ -22,19 +22,19 @@ public class TestBase {
         capabilities.setCapability("enableVideo", true);
         Configuration.browserCapabilities = capabilities;
 
-        Configuration.browser = ProjectConfig.driver.browser();
-        System.out.println("remoteWebDriver: " + ProjectConfig.driver.remoteUrl());
+        Configuration.browser = Project.config.browser();
+        System.out.println("remoteWebDriver: " + Project.config.remoteWebDriverUrl());
 
-        if(ProjectConfig.driver.remoteUrl() != null) {
-            String user = ProjectConfig.driver.remoteUser();
-            String password = ProjectConfig.driver.remotePassword();
-            Configuration.remote = String.format(ProjectConfig.driver.remoteUrl(), user, password);
+        if(Project.config.remoteWebDriverUrl() != null) {
+            String user = Project.config.remoteWebDriverUser();
+            String password = Project.config.remoteWebDriverPassword();
+            Configuration.remote = String.format(Project.config.remoteWebDriverUrl(), user, password);
 
             System.out.println("Running on a remote hub with...");
             System.out.println("user: " + user);
             System.out.println("password: " + password);
-            System.out.println("remote url: " + ProjectConfig.driver.remoteUrl());
-            System.out.println("formatted url: " + String.format(ProjectConfig.driver.remoteUrl(), user, password));
+            System.out.println("remote url: " + Project.config.remoteWebDriverUrl());
+            System.out.println("formatted url: " + String.format(Project.config.remoteWebDriverUrl(), user, password));
         }
     }
 
@@ -44,7 +44,7 @@ public class TestBase {
         Attach.pageSource();
         Attach.attachBrowserConsoleLogs();
 
-        if(ProjectConfig.driver.videoStorage() != null) {
+        if(Project.config.videoStorage() != null) {
             Attach.attachVideo();
         }
         

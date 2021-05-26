@@ -1,2 +1,2 @@
-driver.remoteUser=superhero
-driver.remotePassword=secret
+remoteWebDriverUser=superhero
+remoteWebDriverPassword=secret

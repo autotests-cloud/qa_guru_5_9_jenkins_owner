@@ -1,7 +1,7 @@
 package helpers;
 
 import com.codeborne.selenide.Selenide;
-import config.ProjectConfig;
+import config.Project;
 import io.qameta.allure.Attachment;
 
 import static org.openqa.selenium.logging.LogType.BROWSER;
@@ -25,7 +25,7 @@ public class Attach {
     @Attachment(value = "Video", type = "text/html", fileExtension = ".html")
     public static String attachVideo() {
         return "<html><body><video width='100%' height='100%' controls autoplay><source src='"
-                + ProjectConfig.driver.videoStorage()
+                + Project.config.videoStorage()
                 + DriverUtils.getRemoteSessionId()
                 + ".mp4"
                 + "' type='video/mp4'></video></body></html>";

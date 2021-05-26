@@ -1,7 +1,21 @@
 package config;
 
-import org.aeonbits.owner.ConfigFactory;
+import org.aeonbits.owner.Config;
 
-public class ProjectConfig {
-    public static DriverConfig driver = ConfigFactory.create(DriverConfig.class);
+@Config.LoadPolicy(Config.LoadType.MERGE)
+@Config.Sources({
+        "system:properties",
+        "classpath:config/driver.properties",
+})
+public interface ProjectConfig extends Config {
+    @DefaultValue("chrome")
+    String browser();
+
+    String remoteWebDriverUrl();
+
+    String remoteWebDriverUser();
+
+    String remoteWebDriverPassword();
+
+    String videoStorage();
 }
