@@ -42,7 +42,7 @@ public class TestBase {
     void afterEach() {
         AttachmentHelper.attachScreenshot("Last screenshot");
         AttachmentHelper.attachPageSource();
-        AttachmentHelper.attachAsText("Browser console logs", AttachmentHelper.getConsoleLogs());
+        AttachmentHelper.attachBrowserConsoleLogs();
 
         if(ProjectConfig.driver.videoStorage() != null) {
             AttachmentHelper.attachVideo();
