@@ -19,12 +19,12 @@ public class AttachmentHelper {
 
     @Attachment(value = "Page source", type = "text/plain")
     public static byte[] attachPageSource() {
-        return getWebDriver().getPageSource().getBytes(StandardCharsets.UTF_8);
+        return DriverUtils.getPageSourceAsBytes();
     }
 
     @Attachment(value = "{attachName}", type = "image/png")
     public static byte[] attachScreenshot(String attachName) {
-        return ((TakesScreenshot) getWebDriver()).getScreenshotAs(OutputType.BYTES);
+        return DriverUtils.getScreenshotAsBytes();
     }
 
     @Attachment(value = "Video", type = "text/html", fileExtension = ".html")
