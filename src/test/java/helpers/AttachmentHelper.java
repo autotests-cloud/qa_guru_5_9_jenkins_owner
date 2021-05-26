@@ -31,11 +31,11 @@ public class AttachmentHelper {
     @Attachment(value = "Video", type = "text/html", fileExtension = ".html")
     public static String attachVideo() {
         return "<html><body><video width='100%' height='100%' controls autoplay><source src='"
-                + ProjectConfig.driver.videoStorage() + getSessionId() + ".mp4"
+                + ProjectConfig.driver.videoStorage() + getRemoteSessionId() + ".mp4"
                 + "' type='video/mp4'></video></body></html>";
     }
 
-    public static String getSessionId(){
+    public static String getRemoteSessionId(){
         return ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
     }
 
