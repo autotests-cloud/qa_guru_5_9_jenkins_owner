@@ -6,7 +6,7 @@ import io.qameta.allure.Attachment;
 
 import static org.openqa.selenium.logging.LogType.BROWSER;
 
-public class Attachments {
+public class AllureAttachments {
     @Attachment(value = "{attachName}", type = "text/plain")
     public static String addMessage(String attachName, String text) {
         return text;
@@ -32,6 +32,6 @@ public class Attachments {
     }
 
     public static void addBrowserConsoleLogs() {
-        Attachments.addMessage("Browser console logs", String.join("\n", Selenide.getWebDriverLogs(BROWSER)));
+        AllureAttachments.addMessage("Browser console logs", String.join("\n", Selenide.getWebDriverLogs(BROWSER)));
     }
 }
