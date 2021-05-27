@@ -32,6 +32,7 @@ public class StudentRegistrationFormTests extends TestBase {
 
     @Test
     void successfulFillFormTest() {
+
         step("Open students registration form", () -> {
             open("https://demoqa.com/automation-practice-form");
             $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
@@ -72,7 +73,7 @@ public class StudentRegistrationFormTests extends TestBase {
                 $("#stateCity-wrapper").$(byText(city)).click();
             });
             step("Submit form", () ->
-                    $("#submit").click());
+                $("#submit").click());
         });
 
         step("Verify successful form submit", () -> {
