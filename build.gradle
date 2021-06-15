@@ -7,16 +7,6 @@ repositories {
     mavenCentral()
 }
 
-allure {
-    version = "2.13.8"
-    autoconfigure = true
-    aspectjweaver = true
-    configuration = "testImplementation"
-    useJUnit5 {
-        version = "2.13.8"
-    }
-}
-
 dependencies {
     testImplementation(
             "org.aspectj:aspectjweaver:1.9.6",
