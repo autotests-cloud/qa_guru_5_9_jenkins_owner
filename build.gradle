@@ -1,8 +1,5 @@
-plugins {
-    id 'java-library'
-}
-
 [tool.poetry.dependencies]
+python = "^3.8"
 selene = {version = "^2.0.0-alpha.38", allow-prereleases = true}
 allure-pytest = "^2.9.43"
 pytest = "^6.2.4"
