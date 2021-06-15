@@ -1,3 +1,6 @@
+[tool.poetry]
+name = "python-web-ui-test-base-template"
+
 [tool.poetry.dependencies]
 python = "^3.8"
 selene = {version = "^2.0.0-alpha.38", allow-prereleases = true}
