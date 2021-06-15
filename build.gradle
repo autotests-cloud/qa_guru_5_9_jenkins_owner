@@ -2,12 +2,9 @@ plugins {
     id 'java-library'
 }
 
-dependencies {
-    testImplementation(
+[tool.poetry.dependencies]
             "org.aspectj:aspectjweaver:1.9.6",
             "com.codeborne:selenide:5.20.1",
             "io.qameta.allure:allure-selenide:2.13.8",
             "com.github.javafaker:javafaker:1.0.2",
             "org.aeonbits.owner:owner:1.0.12",
-    )
-}
