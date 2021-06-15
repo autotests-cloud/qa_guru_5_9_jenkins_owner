@@ -1,5 +1,8 @@
 [tool.poetry]
 name = "python-web-ui-test-base-template"
+version = "0.1.0"
+description = "python + pytest + selene + allure web ui tests project template"
+authors = ["Iakiv Kramarenko <yashaka@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
