@@ -4,7 +4,7 @@ plugins {
 
 [tool.poetry.dependencies]
 selene = {version = "^2.0.0-alpha.38", allow-prereleases = true}
-            "io.qameta.allure:allure-selenide:2.13.8",
+allure-pytest = "^2.9.43"
 pytest = "^6.2.4"
 Faker = "^8.8.0"
 pydantic = "^1.8.2"
