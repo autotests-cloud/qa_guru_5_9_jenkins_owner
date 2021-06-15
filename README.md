@@ -1,3 +1,19 @@
+# Initial Project Setup
+
+## Prerequisites
+* pyenv
+  ** python 3.8.2
+* poetry
+
+## Setup
+
+Open terminal in your project folder and do:
+
+```bash
+poetry install
+```
+
+Set a project interpreter in your editor to: `"$(poetry env info -p)/bin/python"`, and you should be ready to go;)
 
 # USAGE examples
 
