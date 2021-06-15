@@ -11,7 +11,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 
-public class TestBase {
+public class ConfTest {
 
     @BeforeAll
     static void setup() {
