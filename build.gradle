@@ -5,5 +5,7 @@ plugins {
 [tool.poetry.dependencies]
 selene = {version = "^2.0.0-alpha.38", allow-prereleases = true}
             "io.qameta.allure:allure-selenide:2.13.8",
+            "org.junit.jupiter:junit-jupiter-api:5.7.1",
+            "org.junit.jupiter:junit-jupiter-engine:5.7.1",
 Faker = "^8.8.0"
 pydantic = "^1.8.2"
