@@ -69,7 +69,7 @@ class StudentRegistrationFormTests:
             @step("Set address")
             def _():
                 s("#currentAddress").set_value(currentAddress)
-                s("#state").scrollTo().click()
+                s("#state").scroll_to().click()
                 s("#stateCity-wrapper").element(by.text(state)).click()
                 s("#city").click()
                 s("#stateCity-wrapper").element(by.text(city)).click()
@@ -135,7 +135,7 @@ class StudentRegistrationFormTests:
             @step("Set address")
             def _():
                 s("#currentAddress").set_value(currentAddress)
-                s("#state").scrollTo().click()
+                s("#state").scroll_to().click()
                 s("#stateCity-wrapper").element(by.text(state)).click()
                 s("#city").click()
                 s("#stateCity-wrapper").element(by.text(city)).click()
