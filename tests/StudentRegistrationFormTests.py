@@ -28,9 +28,10 @@ class StudentRegistrationFormTests:
     city = "Merrut"
 
     def test_successfulFillForm():
-        step("Open students registration form", lambda:
-            open("https://demoqa.com/automation-practice-form")
-            $(".practice-form-wrapper").shouldHave(text("Student Registration Form"))
+        step("Open students registration form", lambda: [
+            open("https://demoqa.com/automation-practice-form"),
+            $(".practice-form-wrapper").shouldHave(text("Student Registration Form")),
+        ]
         )
 
         step("Fill students registration form", lambda:
