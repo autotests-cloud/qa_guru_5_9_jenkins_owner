@@ -36,11 +36,11 @@ class StudentRegistrationFormTests:
         def _():
             @step("Fill common data")
             def _():
-                s("#firstName").set_value(firstName)
-                s("#lastName").set_value(lastName)
-                s("#userEmail").set_value(email)
+                s("#firstName").type(firstName)
+                s("#lastName").type(lastName)
+                s("#userEmail").type(email)
                 s("#genterWrapper").element(byText(gender)).click()
-                s("#userNumber").set_value(mobile)
+                s("#userNumber").type(mobile)
 
             @step("Set date")
             def _():
