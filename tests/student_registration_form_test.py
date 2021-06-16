@@ -6,13 +6,13 @@ from python_web_ui_test.helpers.allure_reporting import step
 from python_web_ui_test.model.components import Dropdown
 
 
-faker = Faker()
+fake = Faker()
 
-first_name = faker.first_name()
-last_name = faker.last_name()
-email = faker.email()
+first_name = fake.first_name()
+last_name = fake.last_name()
+email = fake.email()
 gender = "Other"
-mobile = faker.random_number(digits=10)  # you can use named args;)
+mobile = fake.random_number(digits=10)  # you can use named args;)
 day_of_birth = "10"
 month_of_birth = "May"
 year_of_birth = "1988"
@@ -22,7 +22,7 @@ hobby1 = "Sports"
 hobby2 = "Reading"
 hobby3 = "Music"
 picture = "1.png"
-current_address = faker.street_address()
+current_address = fake.street_address()
 state = "Uttar Pradesh"
 city = "Merrut"
 
