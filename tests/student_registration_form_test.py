@@ -1,3 +1,4 @@
+import os
 from faker import Faker
 from selene import by, have, be, command
 from selene.support.shared import browser
@@ -65,7 +66,7 @@ def test_successful_fill_form():
 
         @step("Upload image")
         def _():
-            s("#uploadPicture").type("resources/img/" + picture)
+            s("#uploadPicture").type(os.path.abspath("../resources/img/" + picture))
 
         @step("Set address")
         def _():
@@ -132,7 +133,7 @@ def test_negative_fill_form():
 
         @step("Upload image")
         def _():
-            s("#uploadPicture").type("resources/img/" + picture)
+            s("#uploadPicture").type(os.path.abspath("../resources/img/" + picture))
 
         @step("Set address")
         def _():
