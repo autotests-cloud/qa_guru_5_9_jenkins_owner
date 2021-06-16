@@ -1,10 +1,9 @@
-import com.github.javafaker.Faker;
-import org.junit.jupiter.api.Test;
+from faker import Faker
+from selene import by, have, be
+from selene import browser
+from selene.support.shared.jquery_style import s, ss
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.*;
-import static io.qameta.allure.Allure.step;
+# import static io.qameta.allure.Allure.step;
 
 public class StudentRegistrationFormTests extends ConfTest {
 
