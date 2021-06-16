@@ -1,11 +1,9 @@
-import os
 from faker import Faker
 from selene import by, have, be, command
 from selene.support.shared import browser
 from selene.support.shared.jquery_style import s, ss
 from python_web_ui_test.helpers.allure_reporting import step
-from python_web_ui_test.model.components import Dropdown
-
+from python_web_ui_test.model.components import Dropdown, Upload
 
 fake = Faker()
 
@@ -66,7 +64,7 @@ def test_successful_fill_form():
 
         @step("Upload image")
         def _():
-            s("#uploadPicture").type(os.path.abspath("../resources/img/" + picture))
+            Upload("#uploadPicture").from_relative("../resources/img/" + picture)
 
         @step("Set address")
         def _():
@@ -133,7 +131,7 @@ def test_negative_fill_form():
 
         @step("Upload image")
         def _():
-            s("#uploadPicture").type(os.path.abspath("../resources/img/" + picture))
+            Upload("#uploadPicture").from_relative("../resources/img/" + picture)
 
         @step("Set address")
         def _():
