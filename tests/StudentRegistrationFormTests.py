@@ -30,7 +30,7 @@ class StudentRegistrationFormTests:
         @step("Open students registration form")
         def _():
             browser.open("https://demoqa.com/automation-practice-form")
-            s(".practice-form-wrapper").shouldHave(text("Student Registration Form"))
+            s(".practice-form-wrapper").should(have.text("Student Registration Form"))
 
         @step("Fill students registration form")
         def _():
@@ -80,23 +80,23 @@ class StudentRegistrationFormTests:
 
         @step("Verify successful form submit")
         def _():
-            s("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"))
-            s("//td[text()='Student Name']").parent().shouldHave(text(firstName + " " + lastName))
-            s("//td[text()='Student Email']").parent().shouldHave(text(email))
-            s("//td[text()='Gender']").parent().shouldHave(text(gender))
-            s("//td[text()='Mobile']").parent().shouldHave(text(mobile))
-            s("//td[text()='Date of Birth']").parent().shouldHave(text(dayOfBirth + " " + monthOfBirth + "," + yearOfBirth))
-            s("//td[text()='Subjects']").parent().shouldHave(text(subject1 + ", " + subject2))
-            s("//td[text()='Hobbies']").parent().shouldHave(text(hobby1 + ", " + hobby2 + ", " + hobby3))
-            s("//td[text()='Picture']").parent().shouldHave(text(picture))
-            s("//td[text()='Address']").parent().shouldHave(text(currentAddress))
-            s("//td[text()='State and City']").parent().shouldHave(text(state + " " + city))
+            s("#example-modal-sizes-title-lg").should(have.text("Thanks for submitting the form"))
+            s("//td[text()='Student Name']").parent().should(have.text(firstName + " " + lastName))
+            s("//td[text()='Student Email']").parent().should(have.text(email))
+            s("//td[text()='Gender']").parent().should(have.text(gender))
+            s("//td[text()='Mobile']").parent().should(have.text(mobile))
+            s("//td[text()='Date of Birth']").parent().should(have.text(dayOfBirth + " " + monthOfBirth + "," + yearOfBirth))
+            s("//td[text()='Subjects']").parent().should(have.text(subject1 + ", " + subject2))
+            s("//td[text()='Hobbies']").parent().should(have.text(hobby1 + ", " + hobby2 + ", " + hobby3))
+            s("//td[text()='Picture']").parent().should(have.text(picture))
+            s("//td[text()='Address']").parent().should(have.text(currentAddress))
+            s("//td[text()='State and City']").parent().should(have.text(state + " " + city))
 
     def test_negativeFillForm():
         @step("Open students registration form")
         def _():
             browser.open("https://demoqa.com/automation-practice-form")
-            s(".practice-form-wrapper").shouldHave(text("Student Registration Form"))
+            s(".practice-form-wrapper").should(have.text("Student Registration Form"))
 
         @step("Fill students registration form")
         def _():
@@ -147,14 +147,14 @@ class StudentRegistrationFormTests:
         # TODO: refactor for cleaner test logic and less boilerplate ...
         @step("Verify successful form submit")
         def _():
-            s("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"))
-            s("//td[text()='Student Name']").parent().shouldHave(text(firstName + " " + lastName))
-            s("//td[text()='Student Email']").parent().shouldHave(text(email))
-            s("//td[text()='Gender']").parent().shouldHave(text(gender))
-            s("//td[text()='Mobile']").parent().shouldHave(text(mobile))
-            s("//td[text()='Date of Birth']").parent().shouldHave(text(dayOfBirth + " " + monthOfBirth + "," + yearOfBirth))
-            s("//td[text()='Subjects']").parent().shouldHave(text(subject1 + ", " + subject2))
-            s("//td[text()='Hobbies']").parent().shouldHave(text(hobby1 + ", " + hobby2 + ", " + hobby3))
-            s("//td[text()='Picture']").parent().shouldHave(text(picture))
-            s("//td[text()='Address']").parent().shouldHave(text(currentAddress))
-            s("//td[text()='State and City']").parent().shouldHave(text(state + " error " + city))
+            s("#example-modal-sizes-title-lg").should(have.text("Thanks for submitting the form"))
+            s("//td[text()='Student Name']").parent().should(have.text(firstName + " " + lastName))
+            s("//td[text()='Student Email']").parent().should(have.text(email))
+            s("//td[text()='Gender']").parent().should(have.text(gender))
+            s("//td[text()='Mobile']").parent().should(have.text(mobile))
+            s("//td[text()='Date of Birth']").parent().should(have.text(dayOfBirth + " " + monthOfBirth + "," + yearOfBirth))
+            s("//td[text()='Subjects']").parent().should(have.text(subject1 + ", " + subject2))
+            s("//td[text()='Hobbies']").parent().should(have.text(hobby1 + ", " + hobby2 + ", " + hobby3))
+            s("//td[text()='Picture']").parent().should(have.text(picture))
+            s("//td[text()='Address']").parent().should(have.text(currentAddress))
+            s("//td[text()='State and City']").parent().should(have.text(state + " error " + city))
