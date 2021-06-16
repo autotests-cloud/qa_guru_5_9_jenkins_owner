@@ -38,8 +38,8 @@
 #         }
 #     }
 #
-#     @AfterEach
-#     void afterEach() {
+#     @AfterEach                      /* <<< LET'S TRANSLATE ONLY THIS SO FAR */
+#     void afterEach() {              /* <<< LET'S TRANSLATE ONLY THIS SO FAR */
 #         AllureAttachments.addScreenshotAs("Last screenshot");
 #         AllureAttachments.addPageSource();
 #         AllureAttachments.addBrowserConsoleLogs();
@@ -48,6 +48,16 @@
 #             AllureAttachments.addVideo();
 #         }
 #
-#         Selenide.closeWebDriver();
+#         Selenide.closeWebDriver();  /* <<< LET'S TRANSLATE ONLY THIS SO FAR */
 #     }
 # }
+import pytest
+from selene.support.shared import browser
+
+
+@pytest.fixture(scope="function", autouse=True)
+def quite_browser():
+
+    yield
+
+    browser.quit()
