@@ -28,7 +28,7 @@ class StudentRegistrationFormTests:
     city = "Merrut"
 
     @Test
-    successfulFillFormTest():
+    def successfulFillFormTest():
         step("Open students registration form", () -> :
             open("https://demoqa.com/automation-practice-form")
             $(".practice-form-wrapper").shouldHave(text("Student Registration Form"))
