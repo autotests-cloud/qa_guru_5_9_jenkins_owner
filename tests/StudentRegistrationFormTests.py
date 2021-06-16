@@ -30,7 +30,8 @@ class StudentRegistrationFormTests:
         @step("Open students registration form")
         def _():
             browser.open("https://demoqa.com/automation-practice-form")
-            s(".practice-form-wrapper").shouldHave(text("Student Registration Form"))
+            browser.element(".practice-form-wrapper").shouldHave(text("Student Registration Form"))
+            # browser.all as alternative to ss ;)
 
         @step("Fill students registration form")
         def _():
