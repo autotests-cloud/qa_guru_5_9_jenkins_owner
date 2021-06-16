@@ -28,45 +28,45 @@ class StudentRegistrationFormTests:
     city = "Merrut"
 
     def test_successfulFillForm():
-        step("Open students registration form", () -> :
+        step("Open students registration form", lambda:
             open("https://demoqa.com/automation-practice-form")
             $(".practice-form-wrapper").shouldHave(text("Student Registration Form"))
         )
 
-        step("Fill students registration form", () -> :
-            step("Fill common data", () -> :
+        step("Fill students registration form", lambda:
+            step("Fill common data", lambda:
                 $("#firstName").val(firstName)
                 $("#lastName").val(lastName)
                 $("#userEmail").val(email)
                 $("#genterWrapper").$(byText(gender)).click()
                 $("#userNumber").val(mobile)
             )
-            step("Set date", () -> :
+            step("Set date", lambda:
                 $("#dateOfBirthInput").clear()
                 $(".react-datepicker__month-select").selectOption(monthOfBirth)
                 $(".react-datepicker__year-select").selectOption(yearOfBirth)
                 $(".react-datepicker__day--0" + dayOfBirth).click()
             )
-            step("Set subjects", () -> :
+            step("Set subjects", lambda:
                 $("#subjectsInput").val(subject1)
                 $(".subjects-auto-complete__menu-list").$(byText(subject1)).click()
                 $("#subjectsInput").val(subject2)
                 $(".subjects-auto-complete__menu-list").$(byText(subject2)).click()
             )
-            step("Set hobbies", () -> :
+            step("Set hobbies", lambda:
                 $("#hobbiesWrapper").$(byText(hobby1)).click()
                 $("#hobbiesWrapper").$(byText(hobby2)).click()
                 $("#hobbiesWrapper").$(byText(hobby3)).click()
             )
             // TODO: consider refactor code like below for same style as everywhere else for consistency/easier reading
             /*
-            step("Upload image", () -> :
+            step("Upload image", lambda:
                 $("#uploadPicture").uploadFromClasspath("img/" + picture)
             )
              */
             step("Upload image", () ->
                     $("#uploadPicture").uploadFromClasspath("img/" + picture))
-            step("Set address", () -> :
+            step("Set address", lambda:
                 $("#currentAddress").val(currentAddress)
                 $("#state").scrollTo().click()
                 $("#stateCity-wrapper").$(byText(state)).click()
@@ -77,7 +77,7 @@ class StudentRegistrationFormTests:
                 $("#submit").click())
         )
 
-        step("Verify successful form submit", () -> :
+        step("Verify successful form submit", lambda:
             $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"))
             $x("//td[text()='Student Name']").parent().shouldHave(text(firstName + " " + lastName))
             $x("//td[text()='Student Email']").parent().shouldHave(text(email))
@@ -93,39 +93,39 @@ class StudentRegistrationFormTests:
     
 
     def test_negativeFillForm():
-        step("Open students registration form", () -> :
+        step("Open students registration form", lambda:
             open("https://demoqa.com/automation-practice-form")
             $(".practice-form-wrapper").shouldHave(text("Student Registration Form"))
         )
 
-        step("Fill students registration form", () -> :
-            step("Fill common data", () -> :
+        step("Fill students registration form", lambda:
+            step("Fill common data", lambda:
                 $("#firstName").val(firstName)
                 $("#lastName").val(lastName)
                 $("#userEmail").val(email)
                 $("#genterWrapper").$(byText(gender)).click()
                 $("#userNumber").val(mobile)
             )
-            step("Set date", () -> :
+            step("Set date", lambda:
                 $("#dateOfBirthInput").clear()
                 $(".react-datepicker__month-select").selectOption(monthOfBirth)
                 $(".react-datepicker__year-select").selectOption(yearOfBirth)
                 $(".react-datepicker__day--0" + dayOfBirth).click()
             )
-            step("Set subjects", () -> :
+            step("Set subjects", lambda:
                 $("#subjectsInput").val(subject1)
                 $(".subjects-auto-complete__menu-list").$(byText(subject1)).click()
                 $("#subjectsInput").val(subject2)
                 $(".subjects-auto-complete__menu-list").$(byText(subject2)).click()
             )
-            step("Set hobbies", () -> :
+            step("Set hobbies", lambda:
                 $("#hobbiesWrapper").$(byText(hobby1)).click()
                 $("#hobbiesWrapper").$(byText(hobby2)).click()
                 $("#hobbiesWrapper").$(byText(hobby3)).click()
             )
             step("Upload image", () ->
                     $("#uploadPicture").uploadFromClasspath("img/" + picture))
-            step("Set address", () -> :
+            step("Set address", lambda:
                 $("#currentAddress").val(currentAddress)
                 $("#state").scrollTo().click()
                 $("#stateCity-wrapper").$(byText(state)).click()
@@ -137,7 +137,7 @@ class StudentRegistrationFormTests:
         )
 
         // TODO: refactor for cleaner test logic and less boilerplate ...
-        step("Verify successful form submit", () -> :
+        step("Verify successful form submit", lambda:
             $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"))
             $x("//td[text()='Student Name']").parent().shouldHave(text(firstName + " " + lastName))
             $x("//td[text()='Student Email']").parent().shouldHave(text(email))
