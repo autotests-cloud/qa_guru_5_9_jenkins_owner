@@ -8,11 +8,11 @@ from python_web_ui_test.model.components import Dropdown
 
 faker = Faker()
 
-firstName = faker.name().firstName()
-lastName = faker.name().lastName()
-email = faker.internet().emailAddress()
+firstName = faker.first_name()
+lastName = faker.last_name()
+email = faker.email()
 gender = "Other"
-mobile = faker.number().digits(10)
+mobile = faker.random_number(digits=10)  # you can use named args;)
 dayOfBirth = "10"
 monthOfBirth = "May"
 yearOfBirth = "1988"
@@ -22,7 +22,7 @@ hobby1 = "Sports"
 hobby2 = "Reading"
 hobby3 = "Music"
 picture = "1.png"
-currentAddress = faker.address().fullAddress()
+currentAddress = faker.street_address()
 state = "Uttar Pradesh"
 city = "Merrut"
 
