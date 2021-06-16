@@ -64,7 +64,7 @@ class StudentRegistrationFormTests:
 
             @step("Upload image")
             def _():
-                s("#uploadPicture").uploadFromClasspath("img/" + picture)
+                s("#uploadPicture").type("resources/img/" + picture)
 
             @step("Set address")
             def _():
@@ -130,7 +130,7 @@ class StudentRegistrationFormTests:
 
             @step("Upload image")
             def _():
-                s("#uploadPicture").uploadFromClasspath("img/" + picture))
+                s("#uploadPicture").type("resources/img/" + picture)
 
             @step("Set address")
             def _():
