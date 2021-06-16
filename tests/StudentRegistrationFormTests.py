@@ -36,11 +36,11 @@ class StudentRegistrationFormTests:
         def _():
             @step("Fill common data")
             def _():
-                s("#firstName").val(firstName)
-                s("#lastName").val(lastName)
-                s("#userEmail").val(email)
+                s("#firstName").set_value(firstName)
+                s("#lastName").set_value(lastName)
+                s("#userEmail").set_value(email)
                 s("#genterWrapper").element(byText(gender)).click()
-                s("#userNumber").val(mobile)
+                s("#userNumber").set_value(mobile)
 
             @step("Set date")
             def _():
@@ -51,9 +51,9 @@ class StudentRegistrationFormTests:
 
             @step("Set subjects")
             def _():
-                s("#subjectsInput").val(subject1)
+                s("#subjectsInput").set_value(subject1)
                 s(".subjects-auto-complete__menu-list").element(byText(subject1)).click()
-                s("#subjectsInput").val(subject2)
+                s("#subjectsInput").set_value(subject2)
                 s(".subjects-auto-complete__menu-list").element(byText(subject2)).click()
 
             @step("Set hobbies")
@@ -68,7 +68,7 @@ class StudentRegistrationFormTests:
 
             @step("Set address")
             def _():
-                s("#currentAddress").val(currentAddress)
+                s("#currentAddress").set_value(currentAddress)
                 s("#state").scrollTo().click()
                 s("#stateCity-wrapper").element(byText(state)).click()
                 s("#city").click()
@@ -102,11 +102,11 @@ class StudentRegistrationFormTests:
         def _():
             @step("Fill common data")
             def _():
-                s("#firstName").val(firstName)
-                s("#lastName").val(lastName)
-                s("#userEmail").val(email)
+                s("#firstName").set_value(firstName)
+                s("#lastName").set_value(lastName)
+                s("#userEmail").set_value(email)
                 s("#genterWrapper").element(byText(gender)).click()
-                s("#userNumber").val(mobile)
+                s("#userNumber").set_value(mobile)
 
             @step("Set date")
             def _():
@@ -117,9 +117,9 @@ class StudentRegistrationFormTests:
 
             @step("Set subjects")
             def _():
-                s("#subjectsInput").val(subject1)
+                s("#subjectsInput").set_value(subject1)
                 s(".subjects-auto-complete__menu-list").element(byText(subject1)).click()
-                s("#subjectsInput").val(subject2)
+                s("#subjectsInput").set_value(subject2)
                 s(".subjects-auto-complete__menu-list").element(byText(subject2)).click()
 
             @step("Set hobbies")
@@ -134,7 +134,7 @@ class StudentRegistrationFormTests:
 
             @step("Set address")
             def _():
-                s("#currentAddress").val(currentAddress)
+                s("#currentAddress").set_value(currentAddress)
                 s("#state").scrollTo().click()
                 s("#stateCity-wrapper").element(byText(state)).click()
                 s("#city").click()
