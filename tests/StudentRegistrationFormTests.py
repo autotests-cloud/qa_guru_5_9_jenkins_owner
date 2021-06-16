@@ -3,6 +3,8 @@ from selene import by, have, be, command
 from selene.support.shared import browser
 from selene.support.shared.jquery_style import s, ss
 from python_web_ui_test.helpers.allure_reporting import step
+from python_web_ui_test.model.components import Dropdown
+
 
 class StudentRegistrationFormTests:
 
@@ -45,8 +47,8 @@ class StudentRegistrationFormTests:
             @step("Set date")
             def _():
                 s("#dateOfBirthInput").clear()
-                s(".react-datepicker__month-select").selectOption(monthOfBirth)
-                s(".react-datepicker__year-select").selectOption(yearOfBirth)
+                Dropdown(".react-datepicker__month-select").select(monthOfBirth)
+                Dropdown(".react-datepicker__year-select").select(yearOfBirth)
                 s(".react-datepicker__day--0" + dayOfBirth).click()
 
             @step("Set subjects")
@@ -111,8 +113,8 @@ class StudentRegistrationFormTests:
             @step("Set date")
             def _():
                 s("#dateOfBirthInput").clear()
-                s(".react-datepicker__month-select").selectOption(monthOfBirth)
-                s(".react-datepicker__year-select").selectOption(yearOfBirth)
+                Dropdown(".react-datepicker__month-select").select(monthOfBirth)
+                Dropdown(".react-datepicker__year-select").select(yearOfBirth)
                 s(".react-datepicker__day--0" + dayOfBirth).click()
 
             @step("Set subjects")
