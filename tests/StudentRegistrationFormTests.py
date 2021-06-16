@@ -28,7 +28,7 @@ class StudentRegistrationFormTests:
     city = "Merrut"
 
     @Test
-    void successfulFillFormTest():
+    successfulFillFormTest() -> None:
         step("Open students registration form", () -> :
             open("https://demoqa.com/automation-practice-form")
             $(".practice-form-wrapper").shouldHave(text("Student Registration Form"))
@@ -94,7 +94,7 @@ class StudentRegistrationFormTests:
     
 
     @Test
-    void negativeFillFormTest():
+    negativeFillFormTest() -> None:
         step("Open students registration form", () -> :
             open("https://demoqa.com/automation-practice-form")
             $(".practice-form-wrapper").shouldHave(text("Student Registration Form"))
