@@ -2,8 +2,7 @@ from faker import Faker
 from selene import by, have, be
 from selene import browser
 from selene.support.shared.jquery_style import s, ss
-
-# import static io.qameta.allure.Allure.step
+from allure import step
 
 class StudentRegistrationFormTests:
 
@@ -28,11 +27,12 @@ class StudentRegistrationFormTests:
     city = "Merrut"
 
     def test_successfulFillForm():
-        step("Open students registration form", lambda: [
-            open("https://demoqa.com/automation-practice-form"),
-            $(".practice-form-wrapper").shouldHave(text("Student Registration Form")),
-        ]
-        )
+        @step("Open students registration form")
+        def fn():
+            open("https://demoqa.com/automation-practice-form")
+            $(".practice-form-wrapper").shouldHave(text("Student Registration Form"))
+
+        fn()
 
         step("Fill students registration form", lambda:
             step("Fill common data", lambda:
