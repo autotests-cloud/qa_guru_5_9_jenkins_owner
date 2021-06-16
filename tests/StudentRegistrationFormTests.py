@@ -28,7 +28,8 @@ class StudentRegistrationFormTests:
     state = "Uttar Pradesh"
     city = "Merrut"
 
-    def test_successfulFillForm(self):
+    @staticmethod
+    def test_successfulFillForm():
         @step("Open students registration form")
         def _():
             browser.open("https://demoqa.com/automation-practice-form")
@@ -38,11 +39,11 @@ class StudentRegistrationFormTests:
         def _():
             @step("Fill common data")
             def _():
-                s("#firstName").set_value(self.firstName)
-                s("#lastName").set_value(self.lastName)
-                s("#userEmail").set_value(self.email)
-                s("#genterWrapper").element(by.text(self.gender)).click()
-                s("#userNumber").set_value(self.mobile)
+                s("#firstName").set_value(StudentRegistrationFormTests.firstName)
+                s("#lastName").set_value(StudentRegistrationFormTests.lastName)
+                s("#userEmail").set_value(StudentRegistrationFormTests.email)
+                s("#genterWrapper").element(by.text(StudentRegistrationFormTests.gender)).click()
+                s("#userNumber").set_value(StudentRegistrationFormTests.mobile)
 
             @step("Set date")
             def _():
