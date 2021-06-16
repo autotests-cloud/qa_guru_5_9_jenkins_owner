@@ -5,7 +5,7 @@ from selene.support.shared.jquery_style import s, ss
 
 # import static io.qameta.allure.Allure.step;
 
-public class StudentRegistrationFormTests extends ConfTest {
+class StudentRegistrationFormTests extends ConfTest {
 
     Faker faker = new Faker();
 
