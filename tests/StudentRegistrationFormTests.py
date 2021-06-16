@@ -1,6 +1,6 @@
 from faker import Faker
 from selene import by, have, be
-from selene import browser
+from selene.support.shared import browser
 from selene.support.shared.jquery_style import s, ss
 from python_web_ui_test.helpers.allure_reporting import step
 
@@ -29,13 +29,11 @@ class StudentRegistrationFormTests:
     def test_successfulFillForm():
         @step("Open students registration form")
         def _():
-            open("https://demoqa.com/automation-practice-form")
+            browser.open("https://demoqa.com/automation-practice-form")
             s(".practice-form-wrapper").shouldHave(text("Student Registration Form"))
 
         @step("Fill students registration form")
         def _():
-            open("https://demoqa.com/automation-practice-form")
-
             @step("Fill common data")
             def _():
                 s("#firstName").val(firstName)
@@ -97,7 +95,7 @@ class StudentRegistrationFormTests:
     def test_negativeFillForm():
         @step("Open students registration form")
         def _():
-            open("https://demoqa.com/automation-practice-form")
+            browser.open("https://demoqa.com/automation-practice-form")
             s(".practice-form-wrapper").shouldHave(text("Student Registration Form"))
 
         @step("Fill students registration form")
