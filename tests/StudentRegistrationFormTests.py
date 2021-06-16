@@ -64,11 +64,6 @@ class StudentRegistrationFormTests:
                 $("#hobbiesWrapper").$(byText(hobby2)).click()
                 $("#hobbiesWrapper").$(byText(hobby3)).click()
 
-            # TODO: consider refactor code like below for same style as everywhere else for consistency/easier reading
-            # @step("Upload image")
-            # def _():
-            #     $("#uploadPicture").uploadFromClasspath("img/" + picture)
-
             @step("Upload image")
             def _():
                 $("#uploadPicture").uploadFromClasspath("img/" + picture)
