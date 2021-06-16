@@ -7,7 +7,7 @@ from selene.support.shared.jquery_style import s, ss
 
 class StudentRegistrationFormTests:
 
-    Faker faker = Faker()
+    faker: Faker = Faker()
 
     String firstName = faker.name().firstName(),
             lastName = faker.name().lastName(),
