@@ -1,5 +1,5 @@
 from faker import Faker
-from selene import by, have, be
+from selene import by, have, be, command
 from selene.support.shared import browser
 from selene.support.shared.jquery_style import s, ss
 from python_web_ui_test.helpers.allure_reporting import step
@@ -69,7 +69,7 @@ class StudentRegistrationFormTests:
             @step("Set address")
             def _():
                 s("#currentAddress").set_value(currentAddress)
-                s("#state").scroll_to().click()
+                s("#state").perform(command.js.scroll_into_view).click()
                 s("#stateCity-wrapper").element(by.text(state)).click()
                 s("#city").click()
                 s("#stateCity-wrapper").element(by.text(city)).click()
@@ -135,7 +135,7 @@ class StudentRegistrationFormTests:
             @step("Set address")
             def _():
                 s("#currentAddress").set_value(currentAddress)
-                s("#state").scroll_to().click()
+                s("#state").perform(command.js.scroll_into_view).click()
                 s("#stateCity-wrapper").element(by.text(state)).click()
                 s("#city").click()
                 s("#stateCity-wrapper").element(by.text(city)).click()
