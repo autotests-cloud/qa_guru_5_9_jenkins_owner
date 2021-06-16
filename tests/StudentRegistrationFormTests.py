@@ -30,7 +30,7 @@ class StudentRegistrationFormTests:
         @step("Open students registration form")
         def _():
             open("https://demoqa.com/automation-practice-form")
-            $(".practice-form-wrapper").shouldHave(text("Student Registration Form"))
+            s(".practice-form-wrapper").shouldHave(text("Student Registration Form"))
 
         @step("Fill students registration form")
         def _():
@@ -38,51 +38,51 @@ class StudentRegistrationFormTests:
 
             @step("Fill common data")
             def _():
-                $("#firstName").val(firstName)
-                $("#lastName").val(lastName)
-                $("#userEmail").val(email)
-                $("#genterWrapper").$(byText(gender)).click()
-                $("#userNumber").val(mobile)
+                s("#firstName").val(firstName)
+                s("#lastName").val(lastName)
+                s("#userEmail").val(email)
+                s("#genterWrapper").element(byText(gender)).click()
+                s("#userNumber").val(mobile)
 
             @step("Set date")
             def _():
-                $("#dateOfBirthInput").clear()
-                $(".react-datepicker__month-select").selectOption(monthOfBirth)
-                $(".react-datepicker__year-select").selectOption(yearOfBirth)
-                $(".react-datepicker__day--0" + dayOfBirth).click()
+                s("#dateOfBirthInput").clear()
+                s(".react-datepicker__month-select").selectOption(monthOfBirth)
+                s(".react-datepicker__year-select").selectOption(yearOfBirth)
+                s(".react-datepicker__day--0" + dayOfBirth).click()
 
             @step("Set subjects")
             def _():
-                $("#subjectsInput").val(subject1)
-                $(".subjects-auto-complete__menu-list").$(byText(subject1)).click()
-                $("#subjectsInput").val(subject2)
-                $(".subjects-auto-complete__menu-list").$(byText(subject2)).click()
+                s("#subjectsInput").val(subject1)
+                s(".subjects-auto-complete__menu-list").element(byText(subject1)).click()
+                s("#subjectsInput").val(subject2)
+                s(".subjects-auto-complete__menu-list").element(byText(subject2)).click()
 
             @step("Set hobbies")
             def _():
-                $("#hobbiesWrapper").$(byText(hobby1)).click()
-                $("#hobbiesWrapper").$(byText(hobby2)).click()
-                $("#hobbiesWrapper").$(byText(hobby3)).click()
+                s("#hobbiesWrapper").element(byText(hobby1)).click()
+                s("#hobbiesWrapper").element(byText(hobby2)).click()
+                s("#hobbiesWrapper").element(byText(hobby3)).click()
 
             @step("Upload image")
             def _():
-                $("#uploadPicture").uploadFromClasspath("img/" + picture)
+                s("#uploadPicture").uploadFromClasspath("img/" + picture)
 
             @step("Set address")
             def _():
-                $("#currentAddress").val(currentAddress)
-                $("#state").scrollTo().click()
-                $("#stateCity-wrapper").$(byText(state)).click()
-                $("#city").click()
-                $("#stateCity-wrapper").$(byText(city)).click()
+                s("#currentAddress").val(currentAddress)
+                s("#state").scrollTo().click()
+                s("#stateCity-wrapper").element(byText(state)).click()
+                s("#city").click()
+                s("#stateCity-wrapper").element(byText(city)).click()
 
             @step("Submit form")
             def _():
-                $("#submit").click()
+                s("#submit").click()
 
         @step("Verify successful form submit")
         def _():
-            $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"))
+            s("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"))
             $x("//td[text()='Student Name']").parent().shouldHave(text(firstName + " " + lastName))
             $x("//td[text()='Student Email']").parent().shouldHave(text(email))
             $x("//td[text()='Gender']").parent().shouldHave(text(gender))
@@ -98,58 +98,58 @@ class StudentRegistrationFormTests:
         @step("Open students registration form")
         def _():
             open("https://demoqa.com/automation-practice-form")
-            $(".practice-form-wrapper").shouldHave(text("Student Registration Form"))
+            s(".practice-form-wrapper").shouldHave(text("Student Registration Form"))
 
         @step("Fill students registration form")
         def _():
             @step("Fill common data")
             def _():
-                $("#firstName").val(firstName)
-                $("#lastName").val(lastName)
-                $("#userEmail").val(email)
-                $("#genterWrapper").$(byText(gender)).click()
-                $("#userNumber").val(mobile)
+                s("#firstName").val(firstName)
+                s("#lastName").val(lastName)
+                s("#userEmail").val(email)
+                s("#genterWrapper").element(byText(gender)).click()
+                s("#userNumber").val(mobile)
 
             @step("Set date")
             def _():
-                $("#dateOfBirthInput").clear()
-                $(".react-datepicker__month-select").selectOption(monthOfBirth)
-                $(".react-datepicker__year-select").selectOption(yearOfBirth)
-                $(".react-datepicker__day--0" + dayOfBirth).click()
+                s("#dateOfBirthInput").clear()
+                s(".react-datepicker__month-select").selectOption(monthOfBirth)
+                s(".react-datepicker__year-select").selectOption(yearOfBirth)
+                s(".react-datepicker__day--0" + dayOfBirth).click()
 
             @step("Set subjects")
             def _():
-                $("#subjectsInput").val(subject1)
-                $(".subjects-auto-complete__menu-list").$(byText(subject1)).click()
-                $("#subjectsInput").val(subject2)
-                $(".subjects-auto-complete__menu-list").$(byText(subject2)).click()
+                s("#subjectsInput").val(subject1)
+                s(".subjects-auto-complete__menu-list").element(byText(subject1)).click()
+                s("#subjectsInput").val(subject2)
+                s(".subjects-auto-complete__menu-list").element(byText(subject2)).click()
 
             @step("Set hobbies")
             def _():
-                $("#hobbiesWrapper").$(byText(hobby1)).click()
-                $("#hobbiesWrapper").$(byText(hobby2)).click()
-                $("#hobbiesWrapper").$(byText(hobby3)).click()
+                s("#hobbiesWrapper").element(byText(hobby1)).click()
+                s("#hobbiesWrapper").element(byText(hobby2)).click()
+                s("#hobbiesWrapper").element(byText(hobby3)).click()
 
             @step("Upload image")
             def _():
-                $("#uploadPicture").uploadFromClasspath("img/" + picture))
+                s("#uploadPicture").uploadFromClasspath("img/" + picture))
 
             @step("Set address")
             def _():
-                $("#currentAddress").val(currentAddress)
-                $("#state").scrollTo().click()
-                $("#stateCity-wrapper").$(byText(state)).click()
-                $("#city").click()
-                $("#stateCity-wrapper").$(byText(city)).click()
+                s("#currentAddress").val(currentAddress)
+                s("#state").scrollTo().click()
+                s("#stateCity-wrapper").element(byText(state)).click()
+                s("#city").click()
+                s("#stateCity-wrapper").element(byText(city)).click()
 
             @step("Submit form")
             def _():
-                $("#submit").click()
+                s("#submit").click()
 
         # TODO: refactor for cleaner test logic and less boilerplate ...
         @step("Verify successful form submit")
         def _():
-            $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"))
+            s("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"))
             $x("//td[text()='Student Name']").parent().shouldHave(text(firstName + " " + lastName))
             $x("//td[text()='Student Email']").parent().shouldHave(text(email))
             $x("//td[text()='Gender']").parent().shouldHave(text(gender))
