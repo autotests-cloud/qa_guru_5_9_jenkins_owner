@@ -26,7 +26,8 @@ currentAddress = faker.address().fullAddress()
 state = "Uttar Pradesh"
 city = "Merrut"
 
-def test_successfulFillForm():
+
+def test_successful_fill_form():
     @step("Open students registration form")
     def _():
         browser.open("https://demoqa.com/automation-practice-form")
@@ -92,7 +93,8 @@ def test_successfulFillForm():
         s("//td[text()='Address']").parent().should(have.text(currentAddress))
         s("//td[text()='State and City']").parent().should(have.text(state + " " + city))
 
-def test_negativeFillForm():
+
+def test_negative_fill_form():
     @step("Open students registration form")
     def _():
         browser.open("https://demoqa.com/automation-practice-form")
