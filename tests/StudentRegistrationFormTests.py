@@ -9,23 +9,23 @@ class StudentRegistrationFormTests:
 
     faker = Faker()
 
-    String firstName = faker.name().firstName(),
-            lastName = faker.name().lastName(),
-            email = faker.internet().emailAddress(),
-            gender = "Other",
-            mobile = faker.number().digits(10),
-            dayOfBirth = "10",
-            monthOfBirth = "May",
-            yearOfBirth = "1988",
-            subject1 = "Chemistry",
-            subject2 = "Commerce",
-            hobby1 = "Sports",
-            hobby2 = "Reading",
-            hobby3 = "Music",
-            picture = "1.png",
-            currentAddress = faker.address().fullAddress(),
-            state = "Uttar Pradesh",
-            city = "Merrut"
+    firstName = faker.name().firstName()
+    lastName = faker.name().lastName()
+    email = faker.internet().emailAddress()
+    gender = "Other"
+    mobile = faker.number().digits(10)
+    dayOfBirth = "10"
+    monthOfBirth = "May"
+    yearOfBirth = "1988"
+    subject1 = "Chemistry"
+    subject2 = "Commerce"
+    hobby1 = "Sports"
+    hobby2 = "Reading"
+    hobby3 = "Music"
+    picture = "1.png"
+    currentAddress = faker.address().fullAddress()
+    state = "Uttar Pradesh"
+    city = "Merrut"
 
     @Test
     void successfulFillFormTest() -> :
