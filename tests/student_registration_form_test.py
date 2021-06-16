@@ -8,21 +8,21 @@ from python_web_ui_test.model.components import Dropdown
 
 faker = Faker()
 
-firstName = faker.first_name()
-lastName = faker.last_name()
+first_name = faker.first_name()
+last_name = faker.last_name()
 email = faker.email()
 gender = "Other"
 mobile = faker.random_number(digits=10)  # you can use named args;)
-dayOfBirth = "10"
-monthOfBirth = "May"
-yearOfBirth = "1988"
+day_of_birth = "10"
+month_of_birth = "May"
+year_of_birth = "1988"
 subject1 = "Chemistry"
 subject2 = "Commerce"
 hobby1 = "Sports"
 hobby2 = "Reading"
 hobby3 = "Music"
 picture = "1.png"
-currentAddress = faker.street_address()
+current_address = faker.street_address()
 state = "Uttar Pradesh"
 city = "Merrut"
 
@@ -37,8 +37,8 @@ def test_successful_fill_form():
     def _():
         @step("Fill common data")
         def _():
-            s("#firstName").set_value(firstName)
-            s("#lastName").set_value(lastName)
+            s("#firstName").set_value(first_name)
+            s("#lastName").set_value(last_name)
             s("#userEmail").set_value(email)
             s("#genterWrapper").element(by.text(gender)).click()
             s("#userNumber").set_value(mobile)
@@ -46,9 +46,9 @@ def test_successful_fill_form():
         @step("Set date")
         def _():
             s("#dateOfBirthInput").clear()
-            Dropdown(".react-datepicker__month-select").select(monthOfBirth)
-            Dropdown(".react-datepicker__year-select").select(yearOfBirth)
-            s(".react-datepicker__day--0" + dayOfBirth).click()
+            Dropdown(".react-datepicker__month-select").select(month_of_birth)
+            Dropdown(".react-datepicker__year-select").select(year_of_birth)
+            s(".react-datepicker__day--0" + day_of_birth).click()
 
         @step("Set subjects")
         def _():
@@ -69,7 +69,7 @@ def test_successful_fill_form():
 
         @step("Set address")
         def _():
-            s("#currentAddress").set_value(currentAddress)
+            s("#currentAddress").set_value(current_address)
             s("#state").perform(command.js.scroll_into_view).click()
             s("#stateCity-wrapper").element(by.text(state)).click()
             s("#city").click()
@@ -82,15 +82,15 @@ def test_successful_fill_form():
     @step("Verify successful form submit")
     def _():
         s("#example-modal-sizes-title-lg").should(have.text("Thanks for submitting the form"))
-        s("//td[text()='Student Name']").element("..").should(have.text(firstName + " " + lastName))
+        s("//td[text()='Student Name']").element("..").should(have.text(first_name + " " + last_name))
         s("//td[text()='Student Email']").element("..").should(have.text(email))
         s("//td[text()='Gender']").element("..").should(have.text(gender))
         s("//td[text()='Mobile']").element("..").should(have.text(mobile))
-        s("//td[text()='Date of Birth']").element("..").should(have.text(dayOfBirth + " " + monthOfBirth + "," + yearOfBirth))
+        s("//td[text()='Date of Birth']").element("..").should(have.text(day_of_birth + " " + month_of_birth + "," + year_of_birth))
         s("//td[text()='Subjects']").element("..").should(have.text(subject1 + ", " + subject2))
         s("//td[text()='Hobbies']").element("..").should(have.text(hobby1 + ", " + hobby2 + ", " + hobby3))
         s("//td[text()='Picture']").element("..").should(have.text(picture))
-        s("//td[text()='Address']").element("..").should(have.text(currentAddress))
+        s("//td[text()='Address']").element("..").should(have.text(current_address))
         s("//td[text()='State and City']").element("..").should(have.text(state + " " + city))
 
 
@@ -104,8 +104,8 @@ def test_negative_fill_form():
     def _():
         @step("Fill common data")
         def _():
-            s("#firstName").set_value(firstName)
-            s("#lastName").set_value(lastName)
+            s("#firstName").set_value(first_name)
+            s("#lastName").set_value(last_name)
             s("#userEmail").set_value(email)
             s("#genterWrapper").element(by.text(gender)).click()
             s("#userNumber").set_value(mobile)
@@ -113,9 +113,9 @@ def test_negative_fill_form():
         @step("Set date")
         def _():
             s("#dateOfBirthInput").clear()
-            Dropdown(".react-datepicker__month-select").select(monthOfBirth)
-            Dropdown(".react-datepicker__year-select").select(yearOfBirth)
-            s(".react-datepicker__day--0" + dayOfBirth).click()
+            Dropdown(".react-datepicker__month-select").select(month_of_birth)
+            Dropdown(".react-datepicker__year-select").select(year_of_birth)
+            s(".react-datepicker__day--0" + day_of_birth).click()
 
         @step("Set subjects")
         def _():
@@ -136,7 +136,7 @@ def test_negative_fill_form():
 
         @step("Set address")
         def _():
-            s("#currentAddress").set_value(currentAddress)
+            s("#currentAddress").set_value(current_address)
             s("#state").perform(command.js.scroll_into_view).click()
             s("#stateCity-wrapper").element(by.text(state)).click()
             s("#city").click()
@@ -150,13 +150,13 @@ def test_negative_fill_form():
     @step("Verify successful form submit")
     def _():
         s("#example-modal-sizes-title-lg").should(have.text("Thanks for submitting the form"))
-        s("//td[text()='Student Name']").element("..").should(have.text(firstName + " " + lastName))
+        s("//td[text()='Student Name']").element("..").should(have.text(first_name + " " + last_name))
         s("//td[text()='Student Email']").element("..").should(have.text(email))
         s("//td[text()='Gender']").element("..").should(have.text(gender))
         s("//td[text()='Mobile']").element("..").should(have.text(mobile))
-        s("//td[text()='Date of Birth']").element("..").should(have.text(dayOfBirth + " " + monthOfBirth + "," + yearOfBirth))
+        s("//td[text()='Date of Birth']").element("..").should(have.text(day_of_birth + " " + month_of_birth + "," + year_of_birth))
         s("//td[text()='Subjects']").element("..").should(have.text(subject1 + ", " + subject2))
         s("//td[text()='Hobbies']").element("..").should(have.text(hobby1 + ", " + hobby2 + ", " + hobby3))
         s("//td[text()='Picture']").element("..").should(have.text(picture))
-        s("//td[text()='Address']").element("..").should(have.text(currentAddress))
+        s("//td[text()='Address']").element("..").should(have.text(current_address))
         s("//td[text()='State and City']").element("..").should(have.text(state + " error " + city))
