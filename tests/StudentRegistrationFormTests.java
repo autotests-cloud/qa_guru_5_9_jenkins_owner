@@ -15,16 +15,16 @@ public class StudentRegistrationFormTests extends ConfTest {
     String firstName = faker.name().firstName(),
             lastName = faker.name().lastName(),
             email = faker.internet().emailAddress(),
-            gender = "Other", // it's more a selector than test data... TODO: move to the test itself for consistency with other selectors, where we don't use variables/fields for DRY
+            gender = "Other",
             mobile = faker.number().digits(10),
             dayOfBirth = "10",
             monthOfBirth = "May",
             yearOfBirth = "1988",
             subject1 = "Chemistry",
             subject2 = "Commerce",
-            hobby1 = "Sports",  // it's more a selector than test data... TODO: move to the test itself for consistency with other selectors, where we don't use variables/fields for DRY
-            hobby2 = "Reading",  // it's more a selector than test data... TODO: move to the test itself for consistency with other selectors, where we don't use variables/fields for DRY
-            hobby3 = "Music",  // it's more a selector than test data... TODO: move to the test itself for consistency with other selectors, where we don't use variables/fields for DRY
+            hobby1 = "Sports",
+            hobby2 = "Reading",
+            hobby3 = "Music",
             picture = "1.png",
             currentAddress = faker.address().fullAddress(),
             state = "Uttar Pradesh",
@@ -39,10 +39,10 @@ public class StudentRegistrationFormTests extends ConfTest {
 
         step("Fill students registration form", () -> {
             step("Fill common data", () -> {
-                $("#firstName").val(firstName); // kind of tight coupling to test data...
+                $("#firstName").val(firstName);
                 $("#lastName").val(lastName);
                 $("#userEmail").val(email);
-                $("#genterWrapper").$(byText(gender)).click(); // might be not stable/economic enough when searching by text
+                $("#genterWrapper").$(byText(gender)).click();
                 $("#userNumber").val(mobile);
             });
             step("Set date", () -> {
@@ -155,38 +155,5 @@ public class StudentRegistrationFormTests extends ConfTest {
             $x("//td[text()='Address']").parent().shouldHave(text(currentAddress));
             $x("//td[text()='State and City']").parent().shouldHave(text(state + " error " + city));
         });
-//        // TODO: ... either option 1 with page object for table component:
-//        step("Verify successful form submit", () -> {
-//            $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
-//            table(".modal-content").shouldHave(new String[][]{
-//                    {"Student Name", firstName + " " + lastName},
-//                    {"Student Email", email},
-//                    {"Gender", gender},
-//                    {"Mobile", mobile},
-//                    {"Date of Birth", dayOfBirth + " " + monthOfBirth + "," + yearOfBirth},
-//                    {"Subjects", subject1 + ", " + subject2},
-//                    {"Hobbies", hobby1 + ", " + hobby2 + ", " + hobby3},
-//                    {"Picture", picture},
-//                    {"Address", currentAddress},
-//                    {"State and City", state + " error " + city},
-//            });
-//        });
-//
-//        // TODO: ... or option 2 with custom selenide condition:
-//        step("Verify successful form submit", () -> {
-//            $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
-//            $(".modal-content").shouldHave(tableData(new String[][]{
-//                    {"Student Name", firstName + " " + lastName},
-//                    {"Student Email", email},
-//                    {"Gender", gender},
-//                    {"Mobile", mobile},
-//                    {"Date of Birth", dayOfBirth + " " + monthOfBirth + "," + yearOfBirth},
-//                    {"Subjects", subject1 + ", " + subject2},
-//                    {"Hobbies", hobby1 + ", " + hobby2 + ", " + hobby3},
-//                    {"Picture", picture},
-//                    {"Address", currentAddress},
-//                    {"State and City", state + " error " + city},
-//            }));
-//        });
     }
 }
