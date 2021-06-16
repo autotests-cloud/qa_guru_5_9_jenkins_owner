@@ -39,7 +39,7 @@ class StudentRegistrationFormTests:
                 s("#firstName").set_value(firstName)
                 s("#lastName").set_value(lastName)
                 s("#userEmail").set_value(email)
-                s("#genterWrapper").element(byText(gender)).click()
+                s("#genterWrapper").element(by.text(gender)).click()
                 s("#userNumber").set_value(mobile)
 
             @step("Set date")
@@ -52,15 +52,15 @@ class StudentRegistrationFormTests:
             @step("Set subjects")
             def _():
                 s("#subjectsInput").set_value(subject1)
-                s(".subjects-auto-complete__menu-list").element(byText(subject1)).click()
+                s(".subjects-auto-complete__menu-list").element(by.text(subject1)).click()
                 s("#subjectsInput").set_value(subject2)
-                s(".subjects-auto-complete__menu-list").element(byText(subject2)).click()
+                s(".subjects-auto-complete__menu-list").element(by.text(subject2)).click()
 
             @step("Set hobbies")
             def _():
-                s("#hobbiesWrapper").element(byText(hobby1)).click()
-                s("#hobbiesWrapper").element(byText(hobby2)).click()
-                s("#hobbiesWrapper").element(byText(hobby3)).click()
+                s("#hobbiesWrapper").element(by.text(hobby1)).click()
+                s("#hobbiesWrapper").element(by.text(hobby2)).click()
+                s("#hobbiesWrapper").element(by.text(hobby3)).click()
 
             @step("Upload image")
             def _():
@@ -70,9 +70,9 @@ class StudentRegistrationFormTests:
             def _():
                 s("#currentAddress").set_value(currentAddress)
                 s("#state").scrollTo().click()
-                s("#stateCity-wrapper").element(byText(state)).click()
+                s("#stateCity-wrapper").element(by.text(state)).click()
                 s("#city").click()
-                s("#stateCity-wrapper").element(byText(city)).click()
+                s("#stateCity-wrapper").element(by.text(city)).click()
 
             @step("Submit form")
             def _():
@@ -105,7 +105,7 @@ class StudentRegistrationFormTests:
                 s("#firstName").set_value(firstName)
                 s("#lastName").set_value(lastName)
                 s("#userEmail").set_value(email)
-                s("#genterWrapper").element(byText(gender)).click()
+                s("#genterWrapper").element(by.text(gender)).click()
                 s("#userNumber").set_value(mobile)
 
             @step("Set date")
@@ -118,15 +118,15 @@ class StudentRegistrationFormTests:
             @step("Set subjects")
             def _():
                 s("#subjectsInput").set_value(subject1)
-                s(".subjects-auto-complete__menu-list").element(byText(subject1)).click()
+                s(".subjects-auto-complete__menu-list").element(by.text(subject1)).click()
                 s("#subjectsInput").set_value(subject2)
-                s(".subjects-auto-complete__menu-list").element(byText(subject2)).click()
+                s(".subjects-auto-complete__menu-list").element(by.text(subject2)).click()
 
             @step("Set hobbies")
             def _():
-                s("#hobbiesWrapper").element(byText(hobby1)).click()
-                s("#hobbiesWrapper").element(byText(hobby2)).click()
-                s("#hobbiesWrapper").element(byText(hobby3)).click()
+                s("#hobbiesWrapper").element(by.text(hobby1)).click()
+                s("#hobbiesWrapper").element(by.text(hobby2)).click()
+                s("#hobbiesWrapper").element(by.text(hobby3)).click()
 
             @step("Upload image")
             def _():
@@ -136,9 +136,9 @@ class StudentRegistrationFormTests:
             def _():
                 s("#currentAddress").set_value(currentAddress)
                 s("#state").scrollTo().click()
-                s("#stateCity-wrapper").element(byText(state)).click()
+                s("#stateCity-wrapper").element(by.text(state)).click()
                 s("#city").click()
-                s("#stateCity-wrapper").element(byText(city)).click()
+                s("#stateCity-wrapper").element(by.text(city)).click()
 
             @step("Submit form")
             def _():
