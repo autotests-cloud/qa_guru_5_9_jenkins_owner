@@ -1,0 +1,13 @@
+[tool.poetry]
+name = "web-ui-test-mvf"
+version = "0.1.0"
+description = "python + pytest + selene + allure web ui tests project template"
+authors = ["Iakiv Kramarenko <yashaka@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+selene = {version = "^2.0.0-alpha38", allow-prereleases = true}
+pytest = "^6.2.4"
+allure-pytest = "^2.9.43"
+pydantic = "^1.8.2"
+Faker = "^8.8.0"
