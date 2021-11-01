@@ -30,8 +30,6 @@ city = "Merrut"
 
 
 def test_success_fulfill_form():
-    # Arrays.asList("a", "b", "c")
-    # ["a", "b", "c"]
 
     @step("Open students registration form")
     def _():
@@ -70,7 +68,7 @@ def test_success_fulfill_form():
 
         @step("Upload image")
         def _():
-            s("#uploadPicture").type(os.path.abspath("../resources/img/" + picture))
+            s("#uploadPicture").type(os.path.abspath("./resources/img/" + picture))
 
         @step("Set address")
         def _():
@@ -99,12 +97,11 @@ def test_success_fulfill_form():
         s("//td[text()='State and City']").element("..").should(have.text(state + " " + city))
 
 
-def test_negativeFillFormTest():
+def test_negative_fill_form_test():
     @step("Open students registration form")
     def _():
         browser.open("https://demoqa.com/automation-practice-form")
         s(".practice-form-wrapper").should(have.text("Student Registration Form"))
-
 
     @step("Fill students registration form")
     def _():
@@ -138,7 +135,7 @@ def test_negativeFillFormTest():
 
         @step("Upload image")
         def _():
-            s("#uploadPicture").type(os.path.abspath("../resources/img/" + picture))
+            s("#uploadPicture").type(os.path.abspath("./resources/img/" + picture))
 
         @step("Set address")
         def _():

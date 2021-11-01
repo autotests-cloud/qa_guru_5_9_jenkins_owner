@@ -53,11 +53,49 @@
 # }
 import pytest
 from selene.support.shared import browser
+from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.firefox import GeckoDriverManager
+
+import config
 
 
-@pytest.fixture(scope="function", autouse=True)
+@pytest.fixture(scope='function', autouse=True)
 def manage_browser():
-    browser.config.timeout = 3.0
+    browser.config.timeout = config.settings.timeout
+    driver = None
+
+    if config.settings.browser == 'chrome':
+        options = webdriver.ChromeOptions()
+        # options.headless = True
+        if not config.settings.remote_webdriver_url:
+            driver = webdriver.Chrome(
+                ChromeDriverManager().install(),
+                options=options,
+            )
+    elif config.settings.browser == 'firefox':
+        options = webdriver.FirefoxOptions()
+        if not config.settings.remote_webdriver_url:
+            driver = webdriver.Firefox(
+                executable_path=GeckoDriverManager().install(),
+                options=options,
+            )
+    else:
+        raise Exception('not supported browser: ' + config.settings.browser)
+
+    if config.settings.remote_webdriver_url:
+        options.set_capability('enableVNC', True)
+        options.set_capability('enableVideo', True)
+        user = config.settings.remote_webdriver_user
+        password = config.settings.remote_webdriver_password
+        remote_webdriver_url = config.settings.remote_webdriver_url % (user, password)
+
+        driver = webdriver.Remote(
+            command_executor=remote_webdriver_url,
+            options=options,
+        )
+
+    browser.config.driver = driver
 
     yield
 

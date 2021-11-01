@@ -4,37 +4,37 @@
 Run in local chrome:
 
 ```bash
-gradle clean test
+
 ```
 
-Run in local opera:
+Run in local firefox:
 
 ```bash
-gradle clean test -Dbrowser=opera
+env -S "browser=firefox" pytest tests/
 ```
 
 Run on remote hub without auth:
 
 ```bash
-gradle clean test -DremoteWebDriverUrl="https://selenoid.autotests.cloud/wd/hub/"
+env -S "remote_webdriver_url=https://selenoid.autotests.cloud/wd/hub/" pytest tests/
 ```
 
 Run on remote hub with explicit auth:
 
 ```bash
-gradle clean test -DremoteWebDriverUrl="https://user1:1234@selenoid.autotests.cloud/wd/hub/"
+env -S "remote_webdriver_url=https://user:pswd@selenoid.autotests.cloud/wd/hub/" pytest tests/
 ```
 
-Run on remote hub with implicit auth credentials (read from properties if set, otherwise failed):
+Run on remote hub with implicit auth credentials (read from properties set in config.env, otherwise failed):
 
 ```bash
-gradle clean test -DremoteWebDriverUrl="https://%s:%s@selenoid.autotests.cloud/wd/hub/"
+env -S "remote_webdriver_url=https://%:%@selenoid.autotests.cloud/wd/hub/" pytest tests/
 ```
 
-Run on remote hub with implicit auth credentials + attach videos to report:
+Run parallelized (`-n auto`) with report (`--alluredir=reports`) on remote hub with implicit auth credentials + attach videos to report:
 
 ```bash
-gradle clean test -DremoteWebDriverUrl="https://%s:%s@selenoid.autotests.cloud/wd/hub/" -DvideoStorage="https://selenoid.autotests.cloud/video/"
+env -S "remote_webdriver_url=https://%:%@selenoid.autotests.cloud/wd/hub/ video_storage=https://selenoid.autotests.cloud/video/" pytest tests/ -n auto --alluredir=reports
 ```
 
 Serve report:
