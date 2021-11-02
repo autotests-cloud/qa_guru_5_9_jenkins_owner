@@ -7,13 +7,15 @@
 - Конвенции Pytest для именования тестов
 - От швейцарского ножа Selenide с его лаконизмом в API до Selene как к фреймворку более минималистичному но и заточенному под более высокоуровневый стиль и язык пользователя
 - О «Явно лучше неявного» из «Дзен Python»
-- Классы и об'єкты в Python. Конструкторы и инициализаторы.
+- Классы и объекты в Python. Конструкторы и инициализаторы.
 - Введение в фикстуры Pytest для настройки независимости тестов
 
 
 ## Материалы:
 
 Запись последней версии урока в высоком качестве: https://www.loom.com/share/e794d51706f8427eabb2a7ecfc20520e
+
+Обратная связь по ссылке https://forms.gle/5Ay5FQYcmvuiRSvi7 поможет сделать следующие материалы максимально полезными;)
 
 Исходники:
 - Ссылка на детальный «сценарий урока» (на английском): https://github.com/yashaka/from-java-to-python-for-web-ui-tests
@@ -23,7 +25,7 @@ https://github.com/autotests-cloud/qa_guru_5_9_jenkins_owner/tree/refactored-by-
 https://github.com/autotests-cloud/qa_guru_5_9_jenkins_owner/tree/switch-to-python-step-by-step
 - Ссылка на репозиторий с кодом в одном комите:
   - код из первого прогона первой части урока https://github.com/autotests-cloud/qa_guru_5_9_jenkins_owner/tree/to-python-part1
-  - код из второго прогона первой части урока https://github.com/autotests-cloud/qa_guru_5_9_jenkins_owner/tree/to-python-part1-mark-ii
+  - код из второго прогона 29.10.2021 первой и второй частей урока https://github.com/autotests-cloud/qa_guru_5_9_jenkins_owner/tree/to-python-part1-mark-ii
   - код из второй части урока (на основе кода из первого прогона): https://github.com/autotests-cloud/qa_guru_5_9_jenkins_owner/tree/to-python-part2
 
 Подборка материалов по изучению Python http://autotest.how/python-ru
